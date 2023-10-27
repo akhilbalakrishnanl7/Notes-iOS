@@ -8,7 +8,7 @@
 
 @class SharedKotlinx_datetimeLocalDateTime, SharedNoteCompanion, SharedNote, SharedDateTimeUtil, SharedNoteQueries, SharedNoteDatabaseCompanion, SharedNoteEntity, SharedKotlinUnit, SharedRuntimeTransacterTransaction, SharedKotlinThrowable, SharedRuntimeBaseTransacterImpl, SharedRuntimeTransacterImpl, SharedRuntimeQuery<__covariant RowType>, SharedKotlinx_datetimeMonth, SharedKotlinx_datetimeLocalDate, SharedKotlinx_datetimeLocalTime, SharedKotlinx_datetimeLocalDateTimeCompanion, SharedKotlinx_datetimeDayOfWeek, SharedKotlinArray<T>, SharedKotlinException, SharedKotlinRuntimeException, SharedKotlinIllegalStateException, SharedRuntimeAfterVersion, SharedRuntimeExecutableQuery<__covariant RowType>, SharedKotlinEnumCompanion, SharedKotlinEnum<E>, SharedKotlinx_datetimeLocalDateCompanion, SharedKotlinx_datetimeLocalTimeCompanion, SharedKotlinByteArray, SharedKotlinByteIterator, SharedKotlinx_serialization_coreSerializersModule, SharedKotlinx_serialization_coreSerialKind, SharedKotlinNothing;
 
-@protocol SharedRuntimeTransactionWithoutReturn, SharedRuntimeTransactionWithReturn, SharedRuntimeTransacterBase, SharedRuntimeTransacter, SharedNoteDatabase, SharedRuntimeSqlDriver, SharedRuntimeSqlSchema, SharedNoteDataSource, SharedKotlinComparable, SharedRuntimeTransactionCallbacks, SharedRuntimeQueryListener, SharedRuntimeQueryResult, SharedRuntimeSqlPreparedStatement, SharedRuntimeSqlCursor, SharedRuntimeCloseable, SharedKotlinx_serialization_coreKSerializer, SharedKotlinIterator, SharedKotlinx_serialization_coreEncoder, SharedKotlinx_serialization_coreSerialDescriptor, SharedKotlinx_serialization_coreSerializationStrategy, SharedKotlinx_serialization_coreDecoder, SharedKotlinx_serialization_coreDeserializationStrategy, SharedKotlinx_serialization_coreCompositeEncoder, SharedKotlinAnnotation, SharedKotlinx_serialization_coreCompositeDecoder, SharedKotlinx_serialization_coreSerializersModuleCollector, SharedKotlinKClass, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier;
+@protocol SharedNoteDataSource, SharedRuntimeTransactionWithoutReturn, SharedRuntimeTransactionWithReturn, SharedRuntimeTransacterBase, SharedRuntimeTransacter, SharedNoteDatabase, SharedRuntimeSqlDriver, SharedRuntimeSqlSchema, SharedKotlinComparable, SharedRuntimeTransactionCallbacks, SharedRuntimeQueryListener, SharedRuntimeQueryResult, SharedRuntimeSqlPreparedStatement, SharedRuntimeSqlCursor, SharedRuntimeCloseable, SharedKotlinx_serialization_coreKSerializer, SharedKotlinIterator, SharedKotlinx_serialization_coreEncoder, SharedKotlinx_serialization_coreSerialDescriptor, SharedKotlinx_serialization_coreSerializationStrategy, SharedKotlinx_serialization_coreDecoder, SharedKotlinx_serialization_coreDeserializationStrategy, SharedKotlinx_serialization_coreCompositeEncoder, SharedKotlinAnnotation, SharedKotlinx_serialization_coreCompositeDecoder, SharedKotlinx_serialization_coreSerializersModuleCollector, SharedKotlinKClass, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -217,6 +217,14 @@ __attribute__((swift_name("DateTimeUtil")))
 - (NSString *)formatNoteDateDateTime:(SharedKotlinx_datetimeLocalDateTime *)dateTime __attribute__((swift_name("formatNoteDate(dateTime:)")));
 - (SharedKotlinx_datetimeLocalDateTime *)now __attribute__((swift_name("now()")));
 - (int64_t)toEpochMillisDateTime:(SharedKotlinx_datetimeLocalDateTime *)dateTime __attribute__((swift_name("toEpochMillis(dateTime:)")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DatabaseModule")))
+@interface SharedDatabaseModule : SharedBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@property (readonly) id<SharedNoteDataSource> noteDataSource __attribute__((swift_name("noteDataSource")));
 @end
 
 __attribute__((swift_name("RuntimeTransacterBase")))
